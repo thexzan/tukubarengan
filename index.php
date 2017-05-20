@@ -1,7 +1,7 @@
 <?php 
 
 include('layout/header.php'); 
-$data_produk = $db->ObjectBuilder()->get('produk');
+
 ?>
 
 <!-- ROW GRID GROUPBUY -->
@@ -11,13 +11,23 @@ $data_produk = $db->ObjectBuilder()->get('produk');
     <div id="products" class="row list-group" data-animation="hierarchical-display">
 
 
+<?php if (isset($_GET['kategori'])){
 
-<?php foreach ($data_produk as $produk): ?>
+    $db->where("slug", $_GET['kategori']);
+    $data_kategori = $db->ObjectBuilder()->getOne('kategori');
+
+    $db->where("id_kategori", $data_kategori->id);    
+
+} 
+
+$data_produk = $db->ObjectBuilder()->get('produk');
+
+foreach ($data_produk as $produk): ?>
 
     <!-- BEGIN PRODUCT GRID ITEM -->
 <div class="item col-md-4 col-sm-6">
     <div class="thumbnail thumbnail-grid"> <!-- BEGIN THUMBNAIL -->
-        <img class="group list-group-image" src="<?php echo base_url; ?>/uploads/groupbuy/1976-npkc-keycap-set/npkc-thumb.jpg" alt="" width="400px" height="250px" />
+        <img class="group list-group-image" src="<?php echo base_url; ?>/images/<?php echo $produk->cover; ?>" alt="" width="400px" height="250px" />
 
         <!-- GB ITEM DETAIL -->
         <div class="caption">
@@ -57,7 +67,6 @@ $data_produk = $db->ObjectBuilder()->get('produk');
 </div><!-- END PRODUCT GRID ITEM-->
     
 <?php endforeach ?>
-
       
 
        

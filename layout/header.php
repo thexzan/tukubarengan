@@ -1,6 +1,6 @@
 <?php 
 
-define("base_url", "http://gbid.dev");
+define("base_url", "http://localhost/tapwl");
 
 require_once ('MysqliDb.php');
 $db = new MysqliDb ('localhost', 'root', 'root', 'pwl');
