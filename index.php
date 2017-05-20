@@ -15,7 +15,7 @@ $data_produk = $db->ObjectBuilder()->get('produk');
 <?php foreach ($data_produk as $produk): ?>
 
     <!-- BEGIN PRODUCT GRID ITEM -->
-<div class="item col-md-4 col-sm-6"asdasd>
+<div class="item col-md-4 col-sm-6">
     <div class="thumbnail thumbnail-grid"> <!-- BEGIN THUMBNAIL -->
         <img class="group list-group-image" src="<?php echo base_url; ?>/uploads/groupbuy/1976-npkc-keycap-set/npkc-thumb.jpg" alt="" width="400px" height="250px" />
 
