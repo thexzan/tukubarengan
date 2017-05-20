@@ -5,10 +5,17 @@ define("base_url", "http://gbid.dev");
 require_once ('MysqliDb.php');
 $db = new MysqliDb ('localhost', 'root', 'root', 'pwl');
 
-include('../fungsi.php');
 
 // BASE QUERY
 $data_kategori = $db->ObjectBuilder()->get('kategori');
+
+
+
+// FUNGSI
+
+function angka_cantik($angka){
+    return number_format($angka, 0 , '' , '.' );
+}
 
 ?>
 <html lang="en">
