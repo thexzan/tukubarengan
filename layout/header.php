@@ -1,7 +1,11 @@
 <?php 
 
+define("base_url", "http://gbid.dev");
+
 require_once ('MysqliDb.php');
 $db = new MysqliDb ('localhost', 'root', 'root', 'pwl');
+
+include('../fungsi.php');
 
 // BASE QUERY
 $data_kategori = $db->ObjectBuilder()->get('kategori');
@@ -14,7 +18,7 @@ $data_kategori = $db->ObjectBuilder()->get('kategori');
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GroupBuyID - Group Buying and Kickstarter Media</title>
 
-    <link rel="stylesheet" href="http://gbid.dev/assets/css/gbid-main.css">
+    <link rel="stylesheet" href="<?php echo base_url; ?>/assets/css/gbid-main.css">
 
 
   </head>
@@ -33,7 +37,7 @@ $data_kategori = $db->ObjectBuilder()->get('kategori');
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="http://gbid.dev/" class="pull-left"><img src="http://gbid.dev/assets/images/logogbid.png" class="logogbid"></a><p class="navbar-text"><span class="label label-gbid-alt">BETA</span></p>
+      <a href="<?php echo base_url; ?>/" class="pull-left"><img src="<?php echo base_url; ?>/assets/images/logogbid.png" class="logogbid"></a><p class="navbar-text"><span class="label label-gbid-alt">BETA</span></p>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -44,25 +48,16 @@ $data_kategori = $db->ObjectBuilder()->get('kategori');
           <ul class="dropdown-menu">
 
           <?php foreach ($data_kategori as $kategori): ?>
-            <li><a href="http://gbid.dev/kategori/<?php echo $kategori->slug; ?>"><?php echo $kategori->judul; ?></a></li>
+            <li><a href="<?php echo base_url; ?>/kategori/<?php echo $kategori->slug; ?>"><?php echo $kategori->judul; ?></a></li>
           <?php endforeach ?>
             
 
                     </ul>
         </li>
 
-        <li class="dropdown ">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Jasa Order <span class="caret"></span></a>
-          <ul class="dropdown-menu">
 
-            <li><a href="http://gbid.dev/hal/jasa-order/china">China</a></li>
-            <li><a>Japan</a></li>
-
-          </ul>
-        </li>
-
-        <li ><a href="http://gbid.dev/hal/tentang-kami">Tentang Kami</a></li>
-        <li ><a href="http://gbid.dev/hal/faq">FAQ</a></li>
+        <li ><a href="<?php echo base_url; ?>/hal/tentang-kami">Tentang Kami</a></li>
+        <li ><a href="<?php echo base_url; ?>/hal/faq">FAQ</a></li>
 
       </ul>
 
@@ -71,12 +66,12 @@ $data_kategori = $db->ObjectBuilder()->get('kategori');
           <li class="dropdown ">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="http://gbid.dev/user/daftar-pesanan">Pesanan</a></li>
-            <li><a href="http://gbid.dev/user/ganti-password">Change Password</a></li>
+            <li><a href="<?php echo base_url; ?>/user/daftar-pesanan">Pesanan</a></li>
+            <li><a href="<?php echo base_url; ?>/user/ganti-password">Change Password</a></li>
 
-                          <li><a href="http://gbid.dev/dashboard">Admin Page</a></li>
+                          <li><a href="<?php echo base_url; ?>/dashboard">Admin Page</a></li>
                         <li role="separator" class="divider"></li>
-            <li><a href="http://gbid.dev/logout">Logout</a></li>
+            <li><a href="<?php echo base_url; ?>/logout">Logout</a></li>
           </ul>
           </li>
               </ul>

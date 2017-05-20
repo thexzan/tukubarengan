@@ -10,15 +10,15 @@
     <div class="container">
 
       <div class="col-md-4">
-        <h4 class="h4"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Tentang GroupBuyID <span class="label label-gbid">BETA</span></h4>
-        <p>GroupBuyID is a new hybrid platform for group buying and kickstarter media for indie project. Don't waste your priceless idea, make it come true in GROUP!</p>
+        <h4 class="h4"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Tentang TukuBarengan <span class="label label-gbid">BETA</span></h4>
+        <p>TukuBarengan is a new hybrid platform for group buying and kickstarter media for indie project. Don't waste your priceless idea, make it come true in GROUP!</p>
       </div>
 
       <div class="col-md-2">
-        <h3 class="h4">GroupBuyID</h3>
+        <h3 class="h4">TukuBarengan</h3>
        <ul>
-          <li><a href="http://gbid.dev/hal/apa-itu-groupbuy">Apa itu Group Buy?</a></li>
-          <li><a href="http://gbid.dev/hal/tentang-kami">Tentang Kami</a></li>
+          <li><a href="<?php echo base_url; ?>/hal/apa-itu-groupbuy">Apa itu Group Buy?</a></li>
+          <li><a href="<?php echo base_url; ?>/hal/tentang-kami">Tentang Kami</a></li>
           <!--<li><a href="#">Karir</a></li>
           <li><a href="#">Forum</a></li>
           <li><a href="#">Blog</a></li>
@@ -29,11 +29,11 @@
       <div class="col-md-2">
         <h3 class="h4">Bantuan</h3>
         <ul>
-          <li><a href="http://gbid.dev/hal/faq">FAQ</a></li>
+          <li><a href="<?php echo base_url; ?>/hal/faq">FAQ</a></li>
           <!--<li><a href="#">Tata Cara</a></li>
           <li><a href="#">Bantuan</a></li>
           <li><a href="#">Syarat dan Ketentuan</a></li>-->
-          <li><a href="http://gbid.dev/hal/kebijakan-privasi">Kebijakan Privasi</a></li>
+          <li><a href="<?php echo base_url; ?>/hal/kebijakan-privasi">Kebijakan Privasi</a></li>
         </ul>
       </div>
 
@@ -43,7 +43,7 @@
        <ul>
           
            <?php foreach ($data_kategori as $kategori): ?>
-            <li><a href="http://gbid.dev/kategori/<?php echo $kategori->slug; ?>"><?php echo $kategori->judul; ?></a></li>
+            <li><a href="<?php echo base_url; ?>/kategori/<?php echo $kategori->slug; ?>"><?php echo $kategori->judul; ?></a></li>
           <?php endforeach ?>
 
         </ul>
@@ -73,10 +73,10 @@
     <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed  -->
-    <script src="http://gbid.dev/assets/js/min/bootstrap.min.js"></script>
+    <script src="<?php echo base_url; ?>/assets/js/min/bootstrap.min.js"></script>
 
-      <link rel="stylesheet" type="text/css" href="http://gbid.dev/assets/css/datatable.css">
-    <script src="http://gbid.dev/assets/js/min/datatable.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="<?php echo base_url; ?>/assets/css/datatable.css">
+    <script src="<?php echo base_url; ?>/assets/js/min/datatable.min.js"></script>
     <script>
      $(document).ready(function(){
         $('#gb-keyboard').DataTable();
@@ -98,7 +98,7 @@
 
 
 <!-- ANIMASI AJAX LOADING AKAN TAMPIL SAAT ADA AJAX CALL-->
-<div class="ajaxcallanimate" style="background-image: url(http://gbid.dev/assets/images/gbid-ajax-loading.gif)"></div>
+<div class="ajaxcallanimate" style="background-image: url(<?php echo base_url; ?>/assets/images/gbid-ajax-loading.gif)"></div>
 
 
 
