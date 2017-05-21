@@ -42,7 +42,7 @@
         
        <ul>
           
-           <?php foreach ($data_kategori as $kategori): ?>
+           <?php foreach ($base_kategori as $kategori): ?>
             <li><a href="<?php echo base_url; ?>/kategori/<?php echo $kategori->slug; ?>"><?php echo $kategori->judul; ?></a></li>
           <?php endforeach ?>
 

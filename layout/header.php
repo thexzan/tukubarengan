@@ -12,7 +12,7 @@ $db = new MysqliDb ('localhost', 'root', 'root', 'pwl');
 
 
 // BASE QUERY
-$data_kategori = $db->ObjectBuilder()->get('kategori');
+$base_kategori = $db->ObjectBuilder()->get('kategori');
 
 
 
@@ -63,7 +63,7 @@ function redirect($url){
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kategori <span class="caret"></span></a>
           <ul class="dropdown-menu">
 
-          <?php foreach ($data_kategori as $kategori): ?>
+          <?php foreach ($base_kategori as $kategori): ?>
             <li><a href="<?php echo base_url; ?>/kategori/<?php echo $kategori->slug; ?>"><?php echo $kategori->judul; ?></a></li>
           <?php endforeach ?>
             
