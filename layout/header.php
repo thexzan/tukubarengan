@@ -1,5 +1,6 @@
 <?php 
 session_start();
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -19,6 +20,10 @@ $data_kategori = $db->ObjectBuilder()->get('kategori');
 
 function angka_cantik($angka){
     return number_format($angka, 0 , '' , '.' );
+}
+
+function redirect($url){
+    echo '<script>window.location.replace("'.$url.'");</script>';
 }
 
 ?>
@@ -73,8 +78,11 @@ function angka_cantik($angka){
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-                <p class="navbar-text">Hello Ikhsan!</p>
-          <li class="dropdown ">
+
+      <?php if (isset($_SESSION["nama"])): ?>
+        <p class="navbar-text">Hello <?php echo strstr($_SESSION["nama"], ' ', true); ?>!</p>
+
+        <li class="dropdown ">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="<?php echo base_url; ?>/user/daftar-pesanan">Pesanan</a></li>
@@ -85,6 +93,18 @@ function angka_cantik($angka){
             <li><a href="<?php echo base_url; ?>/logout">Logout</a></li>
           </ul>
           </li>
+
+
+      <?php else: ?>
+
+      <li><a href="<?php echo base_url; ?>/daftar">Daftar</a></li>
+      <li class="active"><a href="<?php echo base_url; ?>/login">Login</a></li>
+
+      <?php endif ?>
+
+
+                
+          
               </ul>
 
     </div><!-- /.navbar-collapse -->
