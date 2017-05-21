@@ -1,2 +1,4 @@
 RewriteEngine on 
 RewriteRule ^kategori/(\w+)/?$ index.php?kategori=$1
+RewriteRule ^login$ login.php
+RewriteRule ^cek-login$ ceklogin.php

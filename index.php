@@ -22,6 +22,11 @@ include('layout/header.php');
 
 $data_produk = $db->ObjectBuilder()->get('produk');
 
+if ($db->count == 0) {
+   echo '<center><img src="'.base_url.'/assets/images/404.jpg" alt=""></center>';
+}
+
+
 foreach ($data_produk as $produk): ?>
 
     <!-- BEGIN PRODUCT GRID ITEM -->
@@ -67,7 +72,8 @@ foreach ($data_produk as $produk): ?>
 </div><!-- END PRODUCT GRID ITEM-->
     
 <?php endforeach ?>
-      
+
+
 
        
 
