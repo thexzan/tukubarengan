@@ -59,7 +59,7 @@ foreach ($data_produk as $produk): ?>
                 <!-- BUTTON -->
                 <div class="col-xs-12 col-md-6">
                   <div class="btn-group pull-right">
-                    <a href="<?php echo base_url; ?>/gb/1976-npkc-keycap-set" class="btn btn-default">Detail</a>
+                    <a href="<?php echo base_url; ?>/gb/<?php echo $produk->slug; ?>" class="btn btn-default">Detail</a>
                     <a href="<?php echo base_url; ?>/join-groupbuy/1976-npkc-keycap-set" class="btn btn-hijau"><i class="fa fa-cart-plus" aria-hidden="true"></i> Join</a>
                   </div>
                 </div>

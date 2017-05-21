@@ -1,5 +1,6 @@
 RewriteEngine on 
 RewriteRule ^kategori/(\w+)/?$ index.php?kategori=$1
+RewriteRule ^gb/([0-9a-zA-Z-]+)$ produk.php?produk=$1
 RewriteRule ^login$ login.php
 RewriteRule ^cek-login$ ceklogin.php
 RewriteRule ^logout$ logout.php
