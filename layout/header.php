@@ -15,7 +15,6 @@ $db = new MysqliDb ('localhost', 'root', 'root', 'pwl');
 $base_kategori = $db->ObjectBuilder()->get('kategori');
 
 
-
 // FUNGSI
 
 function angka_cantik($angka){

@@ -2,8 +2,6 @@
 
 include('layout/header.php');
 
-
-
 $email = $_POST['email'];
 $pass  = $_POST['password'];
 

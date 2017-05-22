@@ -1,11 +1,23 @@
 <?php include('layout/header.php'); 
+
    if (isset($_GET['produk'])) {
      $db->where("slug", $_GET['produk']);
      $produk = $db->ObjectBuilder()->getOne('produk');
+
+     
+     $db->where('id', $produk->id_kategori);
+     $kategori = $db->ObjectBuilder()->getOne('kategori');
+
+     // kalau ga ada yang cucok , redirek ke HOME
+     if (!$produk) {
+         redirect(base_url);
+     }
    }
    
-   ?>
-<div class="row clearfix zmd-hierarchical-display in" data-animation="hierarchical-display">
+?>
+
+
+<div class="row clearfix zmd-hierarchical-display in" >
    <!-- BREADCRUMB -->
    <div class="container zoomIn animated" style="-webkit-animation: 0.25s; animation: 0.25s;">
       <ol class="breadcrumb">
@@ -13,7 +25,7 @@
             <a href="<?php echo base_url; ?>/">TukuBarengan</a>
          </li>
          <li>
-            <a href="<?php echo base_url; ?>/kategori/keyboard">Keyboard</a>
+            <a href="<?php echo base_url; ?>/kategori/<?php echo $kategori->slug; ?>"><?php echo $kategori->judul; ?></a>
          </li>
          <li class="active"><?php echo $produk->judul; ?></li>
       </ol>
@@ -152,4 +164,3 @@
       include('layout/footer.php'); 
       
       ?>
-</div>
