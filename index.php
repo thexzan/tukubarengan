@@ -37,7 +37,7 @@ foreach ($data_produk as $produk): ?>
         <!-- GB ITEM DETAIL -->
         <div class="caption">
             <h2 class="h4 group inner list-group-item-heading">
-               <a href="<?php echo base_url; ?>/gb/1976-npkc-keycap-set" class="judul-item-grid"><?php echo $produk->judul; ?></a>
+               <a href="<?php echo base_url; ?>/gb/<?php echo $produk->slug; ?>" class="judul-item-grid"><?php echo $produk->judul; ?></a>
             </h4>
 
 
@@ -59,8 +59,14 @@ foreach ($data_produk as $produk): ?>
                 <!-- BUTTON -->
                 <div class="col-xs-12 col-md-6">
                   <div class="btn-group pull-right">
-                    <a href="<?php echo base_url; ?>/gb/<?php echo $produk->slug; ?>" class="btn btn-default">Detail</a>
+                  <a href="<?php echo base_url; ?>/gb/<?php echo $produk->slug; ?>" class="btn btn-default">Detail</a>
+                    <?php if ($produk->status == 'open'): ?>
+                        
                     <a href="<?php echo base_url; ?>/join-groupbuy/1976-npkc-keycap-set" class="btn btn-hijau"><i class="fa fa-cart-plus" aria-hidden="true"></i> Join</a>
+                <?php else: ?>
+
+                    <a href="<?php echo base_url; ?>/join-groupbuy/1976-npkc-keycap-set" class="btn btn-warning disabled">CLOSED</a>
+                    <?php endif ?>
                   </div>
                 </div>
                 <!-- END BUTTON -->

@@ -4,7 +4,7 @@
      $db->where("slug", $_GET['produk']);
      $produk = $db->ObjectBuilder()->getOne('produk');
 
-     
+
      $db->where('id', $produk->id_kategori);
      $kategori = $db->ObjectBuilder()->getOne('kategori');
 
@@ -35,33 +35,47 @@
       <div class="thumbnail thumb-item-page">
          <!-- BEGIN THUMBNAIL -->
          <!-- GB ITEM DETAIL -->
-         <div class="caption">
-            <h2>
-               Rp. <?php echo angka_cantik($produk->harga); ?>
-               <hr>
-            </h2>
-            <h4 class="group inner list-group-item-heading">
-               <?php echo $produk->judul; ?>
-               <span class="label label-warning">
-               <?php echo $produk->status; ?>
-               </span>
-            </h4>
-            <br>
-            <!-- PROGRESS -->
-            <div class="progress">
-               <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100%" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                  100%
-               </div>
-            </div>
-            <!-- END PROGRESS -->
-            <div class="row">
-               <!-- BUTTON -->
-               <div class=" col-md-12">
-               </div>
-               <!-- END BUTTON -->
-            </div>
-            <!-- END ROW-->
-         </div>
+         <div class="caption"> 
+                  <h2>Rp. <?php echo angka_cantik($produk->harga); ?><hr></h2>
+
+                  
+                  
+                     <h4 class="group inner list-group-item-heading">
+                         <?php echo $produk->judul; ?>                  
+                          <?php if ($produk->status == 'open'): ?>
+                             <span class="label label-success"><?php echo $produk->status; ?></span>
+                          <?php else: ?>
+                           <span class="label label-warning"><?php echo $produk->status; ?></span>
+                          <?php endif ?>
+                                     </h4>
+         <hr>
+                   
+
+                     <!-- PROGRESS -->
+                     <div class="progress">
+                       <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100%" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                          100%
+                       </div>
+                     </div>
+                     <!-- END PROGRESS -->
+                     
+                     <?php if ($produk->status == 'open'): ?>
+                        <div class="row"> 
+                            <!-- BUTTON -->
+                                              <div class=" col-md-6">
+
+                                <a href="<?php echo base_url; ?>/admin/edit-gb/40" class="btn btn-gbid btn-block"> EDIT</a>
+                            </div>
+                                                    <div class=" col-md-6">
+                                    <a href="<?php echo base_url; ?>/join-groupbuy/1976-npkc-keycap-set" class="btn btn-hijau btn-block"><i class="fa fa-cart-plus" aria-hidden="true"></i> Join</a>
+                                  </div>
+                                                              <!-- END BUTTON -->
+                        </div>
+                     <?php endif ?>
+                     <!-- END ROW-->
+
+
+                 </div>
          <!-- END GB ITEM DETAIL -->
       </div>
       <!-- END THUMB-->
