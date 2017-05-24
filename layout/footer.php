@@ -95,7 +95,19 @@
         $("body").removeClass("loading");
       });
 
+      function slugify(text){
+        return text.toString().toLowerCase()
+          .replace(/\s+/g, '-')           // Replace spaces with -
+          .replace(/_/g, '-')              // Replace _ with space
+          .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+          .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+          .replace(/^-+/, '')             // Trim - from start of text
+          .replace(/-+$/, '');            // Trim - from end of text
+      }
 
+      $("#nama-item").keyup(function(){
+        $("#slug").val(slugify($(this).val()));
+      });
     </script>
 
 
