@@ -34,8 +34,12 @@ function redirect($url){
     <title>GroupBuyID - Group Buying and Kickstarter Media</title>
 
     <link rel="stylesheet" href="<?php echo base_url; ?>/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url; ?>/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo base_url; ?>/assets/css/gbid.css">
     <link rel="stylesheet" href="<?php echo base_url; ?>/assets/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+
 
 
   </head>
@@ -73,8 +77,8 @@ function redirect($url){
         </li>
 
 
-        <li ><a href="<?php echo base_url; ?>/hal/tentang-kami">Tentang Kami</a></li>
-        <li ><a href="<?php echo base_url; ?>/hal/faq">FAQ</a></li>
+        <li class="<?php if (isset($hal) and $hal == 'tentang-kami') {echo "active";} ?>"><a href="<?php echo base_url; ?>/hal/tentang-kami">Tentang Kami</a></li>
+        <li class="<?php if (isset($hal) and $hal == 'faq') {echo "active";} ?>"><a href="<?php echo base_url; ?>/hal/faq">FAQ</a></li>
 
       </ul>
 
@@ -96,7 +100,8 @@ function redirect($url){
           </ul>
           </li>
 
-           <li ><a href="<?php echo base_url; ?>/hal/tentang-kami">Order</a></li>
+           <li ><a href="<?php echo base_url; ?>/admin/daftar-order">Order</a></li>
+           <li ><a href="<?php echo base_url; ?>/admin/daftar-konfirmasi">Konfirmasi</a></li>
             <li class="<?php if (isset($hal) and $hal == 'admin-member') {echo "active";} ?>"><a href="<?php echo base_url; ?>/admin/daftar-member">Member</a></li>
         
     <?php endif ?>

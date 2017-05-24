@@ -399,3 +399,7 @@ body.loading .ajaxcallanimate {
 .label-biru{
   background: rgb(53, 156, 255);
 }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}

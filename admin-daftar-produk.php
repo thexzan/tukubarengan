@@ -3,7 +3,8 @@ $hal = 'admin-produk';
 include('layout/header.php');
 $no = 1;
 
-$daftar_produk = $db->ObjectBuilder()->get('produk');
+$db->join("kategori k", "p.id_kategori=k.id", "LEFT");
+$daftar_produk = $db->ObjectBuilder()->get('produk p', NULL, 'p.id, p.judul, k.judul as kategori, p.status');
 $jumlah_produk = $db->count;
 
 ?>
@@ -28,7 +29,7 @@ $jumlah_produk = $db->count;
 	<tr>
 		<td><?php echo $no; ?></td>
 		<td><?php echo $produk->judul; ?></td>
-		<td><?php echo $produk->id_kategori; ?></td>
+		<td><?php echo $produk->kategori; ?></td>
 		<td><?php echo $produk->status; ?></td>
 		<td class="text-right">
 			

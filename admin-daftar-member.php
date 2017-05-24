@@ -9,7 +9,7 @@ $jml_member    = $db->count;
 
 <div class="col-md-8 col-md-offset-2" data-animation="hierarchical-display">
 
-<h1>Daftar User - <?php echo $jml_member; ?></h1>
+<h1>Daftar Member - <?php echo $jml_member; ?></h1>
 <hr>
 	<table class="table table-striped table-hover daftar-produk" >
 	
@@ -26,9 +26,7 @@ $jml_member    = $db->count;
 		<td><?php echo $user->nama; ?></td>
 		<td><?php echo $user->email; ?></td>
 		<td class="text-right">
-			
-			<a href="<?php echo base_url.'admin/edit-gb/'.$user->id; ?>"><span class="label label-biru">EDIT</span></a> | 
-			<a href="#" onclick="show_warning_dialog('<?php echo $user->id;?>');"><span class="label label-danger">HAPUS</span></a>
+			<a href="<?php echo base_url.'/admin/daftar-member' ?>"><span class="label label-danger">Suspend</span></a>
 		</td>
 	</tr>
 
