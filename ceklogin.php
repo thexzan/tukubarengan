@@ -16,7 +16,7 @@ if ($db->count == 1) {
 		
 		$_SESSION["email"] = $data_user->email;
 		$_SESSION["nama"]  = $data_user->nama;
-		$_SESSION["level"] = $data_user->levle;
+		$_SESSION["level"] = $data_user->level;
 
 		redirect(base_url);
 

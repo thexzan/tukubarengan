@@ -85,7 +85,8 @@ function redirect($url){
 
         <p class="navbar-text">Hello <?php echo strstr($_SESSION["nama"], ' ', true); ?>!</p>
       
-      <li class="dropdown <?php if (isset($hal) and $hal == 'admin-produk') {echo "active";} ?>">
+    <?php if (isset($_SESSION['level']) AND $_SESSION['level'] == 'admin'): ?>
+       <li class="dropdown <?php if (isset($hal) and $hal == 'admin-produk') {echo "active";} ?>">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Produk<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="<?php echo base_url; ?>/admin/gb-baru">Tambah Baru</a></li>
@@ -98,8 +99,9 @@ function redirect($url){
            <li ><a href="<?php echo base_url; ?>/hal/tentang-kami">Order</a></li>
             <li ><a href="<?php echo base_url; ?>/admin/daftar-member">Member</a></li>
         
+    <?php endif ?>
 
-        <li class="dropdown ">
+      <li class="dropdown ">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="<?php echo base_url; ?>/user/daftar-pesanan">Pesanan</a></li>
@@ -108,8 +110,6 @@ function redirect($url){
             <li><a href="<?php echo base_url; ?>/logout">Logout</a></li>
           </ul>
           </li>
-
-
       <?php else: ?>
 
       <li><a href="<?php echo base_url; ?>/daftar">Daftar</a></li>
