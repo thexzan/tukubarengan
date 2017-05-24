@@ -111,29 +111,6 @@
 
 
 
-<script src="https://cdn.jsdelivr.net/es6-promise/latest/es6-promise.min.js"></script>
-<script src="https://cdn.jsdelivr.net/sweetalert2/4.1.9/sweetalert2.min.js"></script>
-
-<script>
-    function show_warning_dialog(item_id) { 
-        swal({
-      title              : 'Anda yakin?',
-      text               : 'Anda tidak dapat mengembalikan GB ini setelah dihapus!',
-      type               : 'warning',
-      showCancelButton   : true,
-      reverseButtons     : true,
-      confirmButtonColor : '#d33',
-      cancelButtonColor  : '#777',
-      confirmButtonText  : 'Ya, hapus GB!'
-        }).then(function() {
-            var base_url      = '<?php echo base_url().'admin/delete-gb/'; ?>';
-            var delete_gb_url = base_url.concat(item_id);
-            swal('Sukses!', 'GB Anda berhasil dihapus!', 'success').then(function() {
-                window.location.replace(delete_gb_url);
-            })
-        }).done();
-    };
-</script>
 
 
 <!-- ANIMASI AJAX LOADING AKAN TAMPIL SAAT ADA AJAX CALL-->

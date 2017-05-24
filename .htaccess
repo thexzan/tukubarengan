@@ -4,6 +4,8 @@ RewriteRule ^gb/([0-9a-zA-Z-]+)$ produk.php?produk=$1
 RewriteRule ^login$ login.php
 RewriteRule ^cek-login$ ceklogin.php
 RewriteRule ^logout$ logout.php
+RewriteRule ^daftar$ auth-form-daftar.php
+RewriteRule ^auth-do-daftar$ auth-do-daftar.php
 
 ErrorDocument 404 /tapwl/404.php
 

@@ -1,13 +1,11 @@
 <?php 
-$hal = 'admin-produk';
+$hal = 'admin-member';
 include('layout/header.php');
 $no = 1;
 
 $daftar_member = $db->ObjectBuilder()->get('user');
 $jml_member    = $db->count;
 ?>
-
-
 
 <div class="col-md-8 col-md-offset-2" data-animation="hierarchical-display">
 

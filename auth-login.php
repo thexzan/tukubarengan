@@ -1,5 +1,5 @@
 
-<?php include('layout/header.php'); ?>
+<?php $hal = 'login';include('layout/header.php'); ?>
 
 
 
