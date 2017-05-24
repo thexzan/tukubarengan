@@ -10,6 +10,11 @@ if (!isset($_SESSION['level'])): ?>
 	<div class="col-md-4 col-md-offset-4" data-animation="hierarchical-display">
 		<h3 class="text-center"> Silakan Login</h3>
 
+				<hr>
+				<?php if (isset($_SESSION['pesan']) AND isset($_SESSION['pesan-tipe'])): ?>
+					<div class="alert alert-<?php echo $_SESSION['pesan-tipe']; ?>" role="alert"><?php echo $_SESSION['pesan']; ?></div>
+				<?php session_unset('pesan'); endif ?>
+
 	 			<div class="panel panel-default ">
 				<div class="panel-body">
 			
@@ -28,7 +33,7 @@ if (!isset($_SESSION['level'])): ?>
 					</form>
 
 					<hr>
-					<p class="text-center">Belum punya akun ? silakan <a class="label label-primary" href="<?php echo base_url; ?>/daftar">daftar disini</a></p>
+					<p class="text-center">Belum punya akun ? silakan <a class="label label-primary" href="<?php echo base_url; ?>/auth/daftar">daftar disini</a></p>
 
 				</div>
 			</div>

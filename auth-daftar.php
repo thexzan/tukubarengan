@@ -1,7 +1,8 @@
 <?php $hal = 'daftar'; include('layout/header.php'); ?>
 
 
-<div class="row">
+<?php if (!isset($_SESSION['level'])): ?>
+	<div class="row">
 
 	<div class="col-md-4 col-md-offset-4" data-animation="hierarchical-display">
 		<h3 class="text-center">Buat Akun Baru</h3>
@@ -37,7 +38,7 @@
 					</form>
 
 					<hr>
-					<p class="text-center">Sudah punya akun? Silakan <a class="label label-primary" href="<?php echo base_url; ?>/login">login disini</a></p>
+					<p class="text-center">Sudah punya akun? Silakan <a class="label label-primary" href="<?php echo base_url; ?>/auth/login">login disini</a></p>
 
 				</div>
 			</div>
@@ -45,5 +46,9 @@
 
 
 </div>
+<?php else: 
+
+redirect(base_url);
+ endif ?>
 
 <?php include('layout/footer.php'); ?>

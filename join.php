@@ -13,7 +13,7 @@ $produk = $db->ObjectBuilder()->getOne('produk');
 
 ?>
 
-<div class="row">
+<div class="row" data-animation="hierarchical-display">
 <div class="col-md-6 col-md-offset-3">
 
 <div class="text-center">

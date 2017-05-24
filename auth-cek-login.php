@@ -14,19 +14,27 @@ if ($db->count == 1) {
 	$data_user = $db->ObjectBuilder()->getOne('user');
 
 	if (password_verify($pass, $data_user->password)) {
-		
-		$_SESSION["email"] = $data_user->email;
-		$_SESSION["nama"]  = $data_user->nama;
-		$_SESSION["level"] = $data_user->level;
-		$_SESSION["id"]    = $data_user->id;
 
-		redirect($_SESSION['last_page']);
+		if ($data_user->suspended == 1) {
+			$_SESSION['pesan']      = 'Akun anda di <strong>SUSPEND! </strong>';
+			$_SESSION['pesan-tipe'] = 'danger';
+			redirect(base_url.'/auth/login');
+		}else{
+			$_SESSION["email"] = $data_user->email;
+			$_SESSION["nama"]  = $data_user->nama;
+			$_SESSION["level"] = $data_user->level;
+			$_SESSION["id"]    = $data_user->id;
+
+			redirect($_SESSION['last_page']);
+		}
 
 	}else{
-		echo "password salah";
+		$_SESSION['pesan']      = 'Password yang anda masukan salah / Tidak cocok!';
+		$_SESSION['pesan-tipe'] = 'warning';
+		redirect(base_url.'/auth/login');
 	}
 }else{
-	echo "ora ketemu";
+	$_SESSION['pesan']      = 'Anda belum terdaftar! Silakan mendaftar dahulu!';
+	$_SESSION['pesan-tipe'] = 'danger';
+	redirect(base_url.'/auth/login');
 }
-
-include('layout/footer.php');

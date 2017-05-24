@@ -1,5 +1,5 @@
-<?php include('layout/header.php');
-
+<?php $hal = 'user-akun';include('layout/header.php');
+protect_user();
 
 if (isset($_GET['action']) AND $_GET['action'] == 'ganti') {
 $lama = $_POST['lama'];
@@ -42,7 +42,7 @@ if (password_verify($lama, $data_user->password)) {
 
  ?>
 
-<div class="row">
+<div class="row" data-animation="hierarchical-display">
 	
 	<form action="<?php echo base_url.'/user-ganti-password.php?action=ganti'; ?>" method="post">
 
@@ -55,7 +55,7 @@ if (password_verify($lama, $data_user->password)) {
 
 		<?php if (isset($_SESSION['pesan']) AND isset($_SESSION['pesan-tipe'])): ?>
 			<div class="alert alert-<?php echo $_SESSION['pesan-tipe']; ?>" role="alert"><?php echo $_SESSION['pesan']; ?></div>
-		<?php endif ?>
+		<?php session_unset('pesan'); endif ?>
 
 		<div class="panel panel-default">
 		  <div class="panel-body">

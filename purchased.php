@@ -38,7 +38,7 @@ $order = $db->ObjectBuilder()->getOne('pesanan');
 
 <div class="row">
 	
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-6 col-md-offset-3" data-animation="hierarchical-display">
 
 <div class="text-center">
 	<h1 class="h2">Join GroupBuy Sukses !</h1>
