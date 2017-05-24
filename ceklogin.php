@@ -16,6 +16,7 @@ if ($db->count == 1) {
 		
 		$_SESSION["email"] = $data_user->email;
 		$_SESSION["nama"]  = $data_user->nama;
+		$_SESSION["level"] = $data_user->levle;
 
 		redirect(base_url);
 
@@ -25,7 +26,5 @@ if ($db->count == 1) {
 }else{
 	echo "ora ketemu";
 }
-
-
 
 include('layout/footer.php');

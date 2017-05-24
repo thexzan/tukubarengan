@@ -395,3 +395,7 @@ body.loading .ajaxcallanimate {
   border-color: #F62459;
   opacity: 1 !important;
 }
+
+.label-biru{
+  background: rgb(53, 156, 255);
+}

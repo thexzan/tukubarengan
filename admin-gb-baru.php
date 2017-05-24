@@ -2,9 +2,9 @@
 $hal = 'admin-produk';
 include('layout/header.php'); ?>
 
-<div class="row" >
+<div class="row">
 
-<div class="col-md-12">
+<div class="col-md-12" data-animation="hierarchical-display">
 	<script src="<?php echo base_url; ?>/assets/tinymce/tinymce.min.js"></script>
 	   <script type="text/javascript">
 	    tinyMCE.init({
