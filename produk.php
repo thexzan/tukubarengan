@@ -105,7 +105,7 @@
    <div class="item col-md-8 col-md-pull-4 zoomIn animated" style="-webkit-animation: 0.28s; animation: 0.28s;">
       <div class="thumbnail thumb-item-page">
          <!-- BEGIN THUMBNAIL -->
-         <img class="group list-group-image" src="<?php echo base_url; ?>/images/<?php echo $produk->cover; ?>" alt="">
+         <img class="group list-group-image" src="<?php echo base_url; ?>/images/<?php echo $produk->cover; ?>" alt="" width="100%">
       </div>
       <!-- END THUMB-->
       <!-- BEGIN TAB HEADER -->

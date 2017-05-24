@@ -76,7 +76,9 @@
     <script src="<?php echo base_url; ?>/assets/js/bootstrap.min.js"></script>
 
       <link rel="stylesheet" type="text/css" href="<?php echo base_url; ?>/assets/css/datatable.css">
+      <link rel="stylesheet" type="text/css" href="<?php echo base_url; ?>/assets/css/zmd.hierarchical-display.min.css">
     <script src="<?php echo base_url; ?>/assets/js/datatable.min.js"></script>
+    <script src="<?php echo base_url; ?>/assets/js/jquery.zmd.hierarchical-display.js"></script>
     <script>
      $(document).ready(function(){
         $('#gb-keyboard').DataTable();
@@ -92,6 +94,7 @@
 
         $("body").removeClass("loading");
       });
+
 
     </script>
 
