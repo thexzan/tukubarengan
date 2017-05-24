@@ -16,10 +16,11 @@
    
 ?>
 
+<div data-animation="hierarchical-display">
 
-<div class="row clearfix zmd-hierarchical-display in" >
+
    <!-- BREADCRUMB -->
-   <div class="container zoomIn animated" style="-webkit-animation: 0.25s; animation: 0.25s;">
+   <div class="container">
       <ol class="breadcrumb">
          <li>
             <a href="<?php echo base_url; ?>/">TukuBarengan</a>
@@ -31,7 +32,7 @@
       </ol>
    </div>
    <!-- BEGIN SIDEBAR -->
-   <div class="item-detail-sidebar col-md-4 col-md-push-8 zoomIn animated" style="-webkit-animation: 0.7s; animation: 0.7s;">
+   <div class="item-detail-sidebar col-md-4 col-md-push-8">
       <div class="thumbnail thumb-item-page">
          <!-- BEGIN THUMBNAIL -->
          <!-- GB ITEM DETAIL -->
@@ -102,7 +103,7 @@
    </div>
    <!-- END SIDEBAR-->
    <!-- BEGIN DETAIL ITEM -->
-   <div class="item col-md-8 col-md-pull-4 zoomIn animated" style="-webkit-animation: 0.28s; animation: 0.28s;">
+   <div class="item col-md-8 col-md-pull-4 ">
       <div class="thumbnail thumb-item-page">
          <!-- BEGIN THUMBNAIL -->
          <img class="group list-group-image" src="<?php echo base_url; ?>/images/<?php echo $produk->cover; ?>" alt="" width="100%">
@@ -172,9 +173,7 @@
          <!-- END TAB PANEL -->
       </div>
       <!-- END TAB CONTENT -->
+
+
    </div>
-   <!-- END COL MD 8 / DETAIL ITEM-->
-   <?php 
-      include('layout/footer.php'); 
-      
-      ?>
+   <?php include('layout/footer.php');  ?>
