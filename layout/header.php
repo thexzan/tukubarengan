@@ -33,7 +33,9 @@ function redirect($url){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GroupBuyID - Group Buying and Kickstarter Media</title>
 
-    <link rel="stylesheet" href="<?php echo base_url; ?>/assets/css/gbid-main.css">
+    <link rel="stylesheet" href="<?php echo base_url; ?>/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url; ?>/assets/css/gbid.css">
+    <link rel="stylesheet" href="<?php echo base_url; ?>/assets/css/font-awesome.min.css">
 
 
   </head>
@@ -52,7 +54,7 @@ function redirect($url){
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="<?php echo base_url; ?>/" class="pull-left"><img src="<?php echo base_url; ?>/assets/images/logogbid.png" class="logogbid"></a><p class="navbar-text"><span class="label label-gbid-alt">BETA</span></p>
+      <a href="<?php echo base_url; ?>/" class="pull-left"><img src="<?php echo base_url; ?>/assets/images/logogbid.png" class="logogbid"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

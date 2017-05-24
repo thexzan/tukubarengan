@@ -13,7 +13,7 @@
 }
 
 .btn-hijau{
-  background: #2ECC71;
+  background: black;
   color: white;
 }
 
@@ -156,8 +156,8 @@ p a:hover{
 /* END PRODUCT DETAIL SIDEBAR */
 /* BEGIN CUSTOM NAVBAR GROUPBUYID */
 .navbar-default {
-  background-color: #f62459;
-  border-color: #db0a5b;
+  background-color: black;
+  border-color: black;
 }
 .navbar-default .navbar-brand {
   color: #ffffff;
@@ -210,31 +210,31 @@ p a:hover{
 }
 
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    background-color: #db0a5b;
+    background-color: #777;
 }
 
 
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
-  background-color: #F62459;
+  background-color: black;
   color: white;
 }
 
 li.dropdown:hover{
-  background: #db0a5b;
+  background: #777;
 }
 
 /* END CUSTOM NAVBAR GROUPBUYID */
 /* FOOTER */
 .kaki{
-  background: #5D253E;
+  background: #1d1d1e;
   color: white;
   margin-top: 50px;
   padding: 20px;
 }
 
 .madewith{
-  background: #F62459;
+  background: black;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -264,6 +264,7 @@ li.dropdown:hover{
 .madewith .fa{
   font-size: 1.2em;
 }
+
 .kaki ul li,.kaki ul{
   list-style: none;
   padding: 0;
@@ -377,12 +378,4 @@ body.loading .ajaxcallanimate {
     }
 }
 /* END DROPDOWN HOVER FIX */
-
-
-
-
-
-
-
-
 

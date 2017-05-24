@@ -70,13 +70,13 @@
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script src="<?php echo base_url; ?>/assets/js/jquery.min.js"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed  -->
-    <script src="<?php echo base_url; ?>/assets/js/min/bootstrap.min.js"></script>
+    <script src="<?php echo base_url; ?>/assets/js/bootstrap.min.js"></script>
 
       <link rel="stylesheet" type="text/css" href="<?php echo base_url; ?>/assets/css/datatable.css">
-    <script src="<?php echo base_url; ?>/assets/js/min/datatable.min.js"></script>
+    <script src="<?php echo base_url; ?>/assets/js/datatable.min.js"></script>
     <script>
      $(document).ready(function(){
         $('#gb-keyboard').DataTable();
