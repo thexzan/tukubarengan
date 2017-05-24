@@ -17,7 +17,7 @@ if (isset($_GET['action'])) {
 }
 
 $db->join("kategori k", "p.id_kategori=k.id", "LEFT");
-$daftar_produk = $db->ObjectBuilder()->get('produk p', NULL, 'p.id, p.judul, k.judul as kategori, p.status');
+$daftar_produk = $db->ObjectBuilder()->get('produk p', NULL, 'p.id, p.judul, p.slug, k.judul as kategori, p.status');
 $jumlah_produk = $db->count;
 
 ?>
@@ -46,7 +46,7 @@ $jumlah_produk = $db->count;
 		<td><?php echo $produk->status; ?></td>
 		<td class="text-right">
 			
-			<a href="<?php echo base_url.'admin/edit-gb/'.$produk->id; ?>"><span class="label label-biru">EDIT</span></a> | 
+			<a href="<?php echo base_url.'/edit-gb/'.$produk->slug; ?>"><span class="label label-biru">EDIT</span></a> | 
 			<a href="<?php echo base_url.'/admin-daftar-produk.php?action=hapus&id='.$produk->id; ?>"><span class="label label-danger">HAPUS</span></a>
 		</td>
 	</tr>

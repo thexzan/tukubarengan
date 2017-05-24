@@ -78,7 +78,7 @@ $jumlah_komentar = $db->count;
 
                   <?php if (isset($_SESSION['level']) AND $_SESSION['level'] == 'admin'): ?>
                     <div class=" col-md-6">
-                    <a href="<?php echo base_url; ?>/admin/edit-gb/40" class="btn btn-gbid btn-block"> EDIT</a>
+                    <a href="<?php echo base_url.'/edit-gb/'.$produk->slug; ?>" class="btn btn-gbid btn-block"> EDIT</a>
                     </div>
                     <div class=" col-md-6">
                   <?php else: ?>
@@ -151,15 +151,17 @@ $jumlah_komentar = $db->count;
             <!-- TAMBAH MARGIN -->
             <div class="isitab">
                <!-- FORM DISKUSI -->
-               <form action="<?php echo base_url; ?>/user/add-komentar" method="post">
-                  <div class="form-group">
-                     <label for="isidiskusi">Buat Diskusi Baru</label>
-                     <textarea class="form-control" name="isi" rows="5"></textarea>
-                  </div>
-                  <input type="hidden" value="<?php echo $produk->id; ?>" name="id_produk">
-                  <button type="submit" class="btn btn-gbid btn-block">Kirim Diskusi</button>
-               </form>
-               <hr>
+              <?php if (isset($_SESSION['level'])): ?>
+                <form action="<?php echo base_url; ?>/user/add-komentar" method="post">
+                   <div class="form-group">
+                      <label for="isidiskusi">Buat Diskusi Baru</label>
+                      <textarea class="form-control" name="isi" rows="5"></textarea>
+                   </div>
+                   <input type="hidden" value="<?php echo $produk->id; ?>" name="id_produk">
+                   <button type="submit" class="btn btn-gbid btn-block">Kirim Diskusi</button>
+                </form>
+                <hr>
+              <?php endif ?>
                <!-- DIVIDER FORM DENGAN DISKUSI TERKIRIM -->
                <!-- DAFTAR DISKUSI -->
 

@@ -1,7 +1,7 @@
 <?php include('layout/header.php'); 
 
-$nama  = $_POST['nama'];
-$email = $_POST['email'];
+$nama  = strip_tags($_POST['nama']);
+$email = strip_tags($_POST['email']);
 $pass  = $_POST['password'];
 
 $password_setting = [

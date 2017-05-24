@@ -30,7 +30,7 @@ $produk = $db->ObjectBuilder()->getOne('produk');
 
 		<hr>
 
-		<form action="<?php echo base_url.'/konfirmasi-join'; ?>" method="post">
+		<form action="<?php echo base_url.'/user/konfirmasi-join'; ?>" method="post">
 		
 		<div class="form-group">
 		    <label>Jumlah Pesanan</label>

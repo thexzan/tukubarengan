@@ -4,6 +4,10 @@ include('layout/header.php');
 
 protect_admin();
 
+$slug = $_GET['slug'];
+$db->where('slug', $slug);
+$produk = $db->ObjectBuilder()->getOne('produk');
+
 ?>
 
 <div class="row">
@@ -27,28 +31,29 @@ protect_admin();
 	    });
 	</script>
 
-		<h3>Buat Produk Baru</h3>
+		<h3>Edit Produk </h3>
 
 		<hr>
 
 		<div class="col-md-8 col-lg-8">
-		<form action="<?php echo base_url; ?>/admin/publish-gb" method='post' enctype="multipart/form-data">
+		<form action="<?php echo base_url; ?>/admin/publish-edit" method='post'>
+		<input type="hidden" value="<?php echo $produk->id; ?>" name="id_produk">
 
 			<!-- BEGIN FORM -->
 
 			  <div class="form-group">
 			    <label class="control-label" for="nama-item">Nama item</label>
-			    <input type="text" class="form-control input-lg" id="nama-item" placeholder="Nama Item GB" required autofocus name="judul" autocomplete="off">
+			    <input type="text" class="form-control input-lg" id="nama-item" placeholder="Nama Item GB" required autofocus name="judul" autocomplete="off" value="<?php echo $produk->judul; ?>">
 			  </div>
 			  <div class="form-group">
 			  	<div class="input-group">
 				<span class="input-group-addon" id="basic-addon1"><?php echo base_url.'/gb/'; ?></span>
-				<input type="text" class="form-control" id="slug" placeholder="Slug = what will be the URL of this item" required name="slug" readonly>
+				<input type="text" class="form-control" id="slug" placeholder="Slug = what will be the URL of this item" required name="slug" readonly value="<?php echo $produk->slug; ?>">
 			  </div>
 			  </div>
 			  <div class="form-group">
 			    <label class="control-label" for="deskripsi">Deskripsi </label>
-			    <textarea class="form-control deskripsi" id="deskripsi" rows="20" placeholder="Deskripsi Lengkap" name="deskripsi"></textarea>
+			    <textarea class="form-control deskripsi" id="deskripsi" rows="20" placeholder="Deskripsi Lengkap" name="deskripsi"><?php echo $produk->desc; ?></textarea>
 			  </div>
 
 		</div> <!-- END COL MD 8 -->
@@ -75,7 +80,9 @@ protect_admin();
 								<option value="">Pilih Kategori !</option>
 								
 								<?php foreach ($base_kategori as $kategori): ?>
-									<option value="<?php echo $kategori->id; ?>"><?php echo $kategori->judul; ?></option>
+									<option value="<?php echo $kategori->id; ?>" <?php if ($kategori->id == $produk->id_kategori): ?> selected
+										
+									<?php endif ?>><?php echo $kategori->judul; ?></option>
 								<?php endforeach ?>
 								
 							</select>
@@ -84,11 +91,11 @@ protect_admin();
 
 					  <div class="form-group">
 					    <label class="control-label" for="harga-item">Harga</label>
-					    <input type="number" class="form-control input-lg" id="harga-item" placeholder="Harga Item GB" name="harga" required>
+					    <input type="number" class="form-control input-lg" id="harga-item" placeholder="Harga Item GB" name="harga" required value="<?php echo $produk->harga; ?>">
 					  </div>
 					  <div class="form-group">
 					    <label class="control-label" for="harga-item">Target Entry</label>
-					    <input type="number" class="form-control" id="harga-item" placeholder="Target Entry GB" name="target" required>
+					    <input type="number" class="form-control" id="harga-item" placeholder="Target Entry GB" name="target" required value="<?php echo $produk->target; ?>">
 					    <span id="helpBlock" class="help-block">Target minimal entry pada groupbuy ini.</span>
 					  </div>
 
@@ -104,15 +111,8 @@ protect_admin();
 				<div class="panel-body">
 
 
-					<div class="form-group">
-						<label class="control-label" for="thumb">Cover</label>
-						<input type="file" id="thumb" name="cover" required>
-						<p class="help-block">Ukuran Cover 800px x 500px.</p>
-					</div>
 
-
-
-					<button type="submit" class="btn btn-success btn-block">Publish GroupBuy</button>
+					<button type="submit" class="btn btn-success btn-block">Publish EDIT</button>
 					
 					</form>
 					<!-- END FORM -->

@@ -3,8 +3,8 @@
 protect_user();
 
 $id         = $_POST['id_produk'];
-$qty        = $_POST['qty'];
-$alamat     = $_POST['alamat'];
+$qty        = strip_tags($_POST['qty']);
+$alamat     = strip_tags($_POST['alamat']);
 
 $db->where('id', $id);
 $produk = $db->ObjectBuilder()->getOne('produk');
@@ -47,7 +47,7 @@ $total      = $qty*$produk->harga;
 			
 		</table>
 
-		<form action="<?php echo base_url.'/purchased'; ?>" method="post">
+		<form action="<?php echo base_url.'/user/purchased'; ?>" method="post">
 			<input type="hidden" value="<?php echo $_SESSION['id']; ?>" name="id_user">
 			<input type="hidden" value="<?php echo $produk->id; ?>" name="id_produk">
 			<input type="hidden" value="<?php echo $total; ?>" name="total">

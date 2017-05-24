@@ -3,11 +3,11 @@
 protect_user();
 
 $ref_number = '#'.strtoupper(random_id(5));
-$id_produk  = $_POST['id_produk'];
+$id_produk  = strip_tags($_POST['id_produk']);
 $id_user    = $_SESSION['id'];
-$qty        = $_POST['qty'];
-$alamat     = $_POST['alamat'];
-$total      = $_POST['total'];
+$qty        = strip_tags($_POST['qty']);
+$alamat     = strip_tags($_POST['alamat']);
+$total      = strip_tags($_POST['total']);
 
 $data_order_baru = Array(
 	"ref_number" => $ref_number,
