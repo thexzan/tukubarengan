@@ -69,12 +69,14 @@
                   <?php if (isset($_SESSION['level']) AND $_SESSION['level'] == 'admin'): ?>
                     <div class=" col-md-6">
                     <a href="<?php echo base_url; ?>/admin/edit-gb/40" class="btn btn-gbid btn-block"> EDIT</a>
+                    </div>
+                    <div class=" col-md-6">
                   <?php else: ?>
                     <div class=" col-md-12">
                   <?php endif ?>
                   
 
-                  <a href="<?php echo base_url; ?>/join-groupbuy/1976-npkc-keycap-set" class="btn btn-hijau btn-block"><i class="fa fa-cart-plus" aria-hidden="true"></i> Join</a>
+                  <a href="<?php echo base_url.'/join/'.$produk->slug; ?>" class="btn btn-hijau btn-block"><i class="fa fa-cart-plus" aria-hidden="true"></i> Join</a>
                   </div>
                                                               <!-- END BUTTON -->
                         </div>
