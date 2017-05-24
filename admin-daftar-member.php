@@ -1,6 +1,7 @@
 <?php 
 $hal = 'admin-member';
 include('layout/header.php');
+protect_admin();
 $no = 1;
 
 

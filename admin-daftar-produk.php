@@ -1,7 +1,20 @@
 <?php 
 $hal = 'admin-produk';
 include('layout/header.php');
+protect_admin();
+
 $no = 1;
+
+if (isset($_GET['action'])) {
+	if ($_GET['action'] == 'hapus') {
+		$db->where('id', $_GET['id']);
+        $data_foto = $db->ObjectBuilder()->getOne('foto');
+        unlink('images/'.$data_foto->foto);
+
+        $db->where('id', $_GET['id']);
+        $db->delete('foto');
+	}
+}
 
 $db->join("kategori k", "p.id_kategori=k.id", "LEFT");
 $daftar_produk = $db->ObjectBuilder()->get('produk p', NULL, 'p.id, p.judul, k.judul as kategori, p.status');
@@ -34,7 +47,7 @@ $jumlah_produk = $db->count;
 		<td class="text-right">
 			
 			<a href="<?php echo base_url.'admin/edit-gb/'.$produk->id; ?>"><span class="label label-biru">EDIT</span></a> | 
-			<a href="#" onclick="show_warning_dialog('<?php echo $produk->Id;?>');"><span class="label label-danger">HAPUS</span></a>
+			<a href="<?php echo base_url.'/admin-daftar-produk.php?action=hapus&id='.$produk->id; ?>"><span class="label label-danger">HAPUS</span></a>
 		</td>
 	</tr>
 

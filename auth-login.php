@@ -1,7 +1,9 @@
-
-<?php $hal = 'login';include('layout/header.php'); ?>
-
-
+<?php 
+$hal = 'login';
+include('layout/header.php');
+$_SESSION['last_page'] = $_SERVER['HTTP_REFERER'];
+if (!isset($_SESSION['level'])): ?>
+	
 
 <div class="row">
 
@@ -34,6 +36,10 @@
 
 
 </div>
+
+<?php else: 
+	redirect(base_url);
+ endif ?>
 
 
 <?php include('layout/footer.php'); ?>

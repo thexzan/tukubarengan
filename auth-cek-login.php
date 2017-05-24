@@ -10,6 +10,7 @@ $data_users = $db->ObjectBuilder()->get('user');
 
 
 if ($db->count == 1) {
+	$db->where('email', $email);
 	$data_user = $db->ObjectBuilder()->getOne('user');
 
 	if (password_verify($pass, $data_user->password)) {
@@ -17,8 +18,9 @@ if ($db->count == 1) {
 		$_SESSION["email"] = $data_user->email;
 		$_SESSION["nama"]  = $data_user->nama;
 		$_SESSION["level"] = $data_user->level;
+		$_SESSION["id"]    = $data_user->id;
 
-		redirect(base_url);
+		redirect($_SESSION['last_page']);
 
 	}else{
 		echo "password salah";

@@ -403,3 +403,14 @@ body.loading .ajaxcallanimate {
 body {
   font-family: 'Open Sans', sans-serif;
 }
+
+.btn-black{
+  background: black;
+  color: white;
+}
+
+.btn-black:hover{
+  background: white;
+  color: black;
+  border-color: black;
+}

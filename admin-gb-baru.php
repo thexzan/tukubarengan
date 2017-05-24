@@ -1,6 +1,10 @@
 <?php 
 $hal = 'admin-produk';
-include('layout/header.php'); ?>
+include('layout/header.php'); 
+
+protect_admin();
+
+?>
 
 <div class="row">
 

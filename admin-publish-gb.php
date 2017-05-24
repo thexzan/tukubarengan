@@ -1,4 +1,5 @@
 <?php include('layout/header.php'); 
+protect_admin();
 
 $data = Array (
     "judul"       => $_POST['judul'],

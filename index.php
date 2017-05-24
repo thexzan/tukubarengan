@@ -63,7 +63,7 @@ foreach ($data_produk as $produk): ?>
                   <a href="<?php echo base_url; ?>/gb/<?php echo $produk->slug; ?>" class="btn btn-default">Detail</a>
                     <?php if ($produk->status == 'open'): ?>
                         
-                    <a href="<?php echo base_url; ?>/join-groupbuy/1976-npkc-keycap-set" class="btn btn-hijau"><i class="fa fa-cart-plus" aria-hidden="true"></i> Join</a>
+                    <a href="<?php echo base_url.'/join/'.$produk->slug; ?>" class="btn btn-hijau"><i class="fa fa-cart-plus" aria-hidden="true"></i> Join</a>
                 <?php else: ?>
 
                     <a href="<?php echo base_url; ?>/join-groupbuy/1976-npkc-keycap-set" class="btn btn-warning disabled">CLOSED</a>

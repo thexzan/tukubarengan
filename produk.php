@@ -43,11 +43,13 @@
                   
                      <h4 class="group inner list-group-item-heading">
                          <?php echo $produk->judul; ?>                  
-                          <?php if ($produk->status == 'open'): ?>
-                             <span class="label label-success"><?php echo $produk->status; ?></span>
+                         <div class="text-center">
+                            <?php if ($produk->status == 'open'): ?>
+                             <span class="label label-success"><?php echo strtoupper($produk->status); ?></span>
                           <?php else: ?>
-                           <span class="label label-warning"><?php echo $produk->status; ?></span>
+                           <span class="label label-warning"><?php echo strtoupper($produk->status); ?></span>
                           <?php endif ?>
+                         </div>
                                      </h4>
          <hr>
                    
@@ -63,13 +65,17 @@
                      <?php if ($produk->status == 'open'): ?>
                         <div class="row"> 
                             <!-- BUTTON -->
-                                              <div class=" col-md-6">
 
-                                <a href="<?php echo base_url; ?>/admin/edit-gb/40" class="btn btn-gbid btn-block"> EDIT</a>
-                            </div>
-                                                    <div class=" col-md-6">
-                                    <a href="<?php echo base_url; ?>/join-groupbuy/1976-npkc-keycap-set" class="btn btn-hijau btn-block"><i class="fa fa-cart-plus" aria-hidden="true"></i> Join</a>
-                                  </div>
+                  <?php if (isset($_SESSION['level']) AND $_SESSION['level'] == 'admin'): ?>
+                    <div class=" col-md-6">
+                    <a href="<?php echo base_url; ?>/admin/edit-gb/40" class="btn btn-gbid btn-block"> EDIT</a>
+                  <?php else: ?>
+                    <div class=" col-md-12">
+                  <?php endif ?>
+                  
+
+                  <a href="<?php echo base_url; ?>/join-groupbuy/1976-npkc-keycap-set" class="btn btn-hijau btn-block"><i class="fa fa-cart-plus" aria-hidden="true"></i> Join</a>
+                  </div>
                                                               <!-- END BUTTON -->
                         </div>
                      <?php endif ?>

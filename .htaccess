@@ -5,9 +5,13 @@ RewriteRule ^hal/([0-9a-zA-Z-]+)$ hal.php?slug=$1
 RewriteRule ^login$ login.php
 RewriteRule ^logout$ logout.php
 RewriteRule ^daftar$ auth-form-daftar.php
+RewriteRule ^konfirmasi-join$ konfirmasi-join.php
+RewriteRule ^purchased$ purchased.php
 
 ErrorDocument 404 /tapwl/404.php
 
 RewriteRule ^admin/([0-9a-zA-Z-]+)$ admin-$1.php
+RewriteRule ^user/([0-9a-zA-Z-]+)$ user-$1.php
 RewriteRule ^auth/([0-9a-zA-Z-]+)$ auth-$1.php
+RewriteRule ^join/([0-9a-zA-Z-]+)$ join.php?produk=$1
 

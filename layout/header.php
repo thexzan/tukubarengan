@@ -25,6 +25,23 @@ function redirect($url){
     echo '<script>window.location.replace("'.$url.'");</script>';
 }
 
+function protect_user(){
+  if (!isset($_SESSION['level'])){
+    redirect(base_url.'/auth/login');
+  }
+}
+
+function protect_admin(){
+  if (!isset($_SESSION['level']) OR $_SESSION['level'] != 'admin') {
+    redirect(base_url);
+  }
+}
+
+function random_id($bytes) {
+  $rand = mcrypt_create_iv($bytes, MCRYPT_DEV_URANDOM);
+  return bin2hex($rand);
+}
+
 ?>
 <html lang="en">
   <head>
@@ -58,7 +75,7 @@ function redirect($url){
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="<?php echo base_url; ?>/" class="pull-left"><img src="<?php echo base_url; ?>/assets/images/logogbid.png" class="logogbid"></a>
+      <a href="<?php echo base_url; ?>/" class="pull-left"><img src="<?php echo base_url; ?>/assets/images/tukubarengan-short.png" class="logogbid"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -100,8 +117,16 @@ function redirect($url){
           </ul>
           </li>
 
-           <li ><a href="<?php echo base_url; ?>/admin/daftar-order">Order</a></li>
-           <li ><a href="<?php echo base_url; ?>/admin/daftar-konfirmasi">Konfirmasi</a></li>
+          <li class="dropdown <?php if (isset($hal) and $hal == 'admin-order') {echo "active";} ?>">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Order<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+             <li ><a href="<?php echo base_url; ?>/admin/daftar-order">Daftar Order</a></li>
+             <li role="separator" class="divider"></li>
+              <li ><a href="<?php echo base_url; ?>/admin/daftar-konfirmasi">Konfirmasi Pembayaran</a></li>
+          </ul>
+          </li>
+             
+
             <li class="<?php if (isset($hal) and $hal == 'admin-member') {echo "active";} ?>"><a href="<?php echo base_url; ?>/admin/daftar-member">Member</a></li>
         
     <?php endif ?>
