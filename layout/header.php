@@ -107,7 +107,7 @@ function redirect($url){
             <li><a href="<?php echo base_url; ?>/user/daftar-pesanan">Pesanan</a></li>
             <li><a href="<?php echo base_url; ?>/user/ganti-password">Change Password</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="<?php echo base_url; ?>/logout">Logout</a></li>
+            <li><a href="<?php echo base_url; ?>/auth/logout">Logout</a></li>
           </ul>
           </li>
       <?php else: ?>
@@ -117,10 +117,7 @@ function redirect($url){
 
       <?php endif ?>
 
-
-                
-          
-              </ul>
+      </ul>
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
