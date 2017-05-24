@@ -5,13 +5,13 @@
 
 <div class="row">
 
-	<div class="col-md-4 col-md-offset-4 zmd-hierarchical-display in" data-animation="hierarchical-display">
-		<h3 class="text-center zoomIn animated" style="-webkit-animation: 0.01s; animation: 0.01s;"> Silakan Login</h3>
+	<div class="col-md-4 col-md-offset-4" data-animation="hierarchical-display">
+		<h3 class="text-center"> Silakan Login</h3>
 
-		 			<div class="panel panel-default zoomIn animated" style="-webkit-animation: 0.05s; animation: 0.05s;">
+	 			<div class="panel panel-default ">
 				<div class="panel-body">
 			
-					<form action="<?php echo base_url; ?>/cek-login" method="POST">
+					<form action="<?php echo base_url; ?>/auth/cek-login" method="POST">
 						<div class="form-group">
 							<label for="email">Alamat Email</label>
 							<input type="text" name="email" class="form-control" id="email" placeholder="Email" autofocus="" required="">

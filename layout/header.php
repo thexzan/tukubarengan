@@ -112,8 +112,8 @@ function redirect($url){
           </li>
       <?php else: ?>
 
-      <li class="<?php if (isset($hal) and $hal == 'daftar') {echo "active";} ?>"><a href="<?php echo base_url; ?>/daftar">Daftar</a></li>
-      <li class="<?php if (isset($hal) and $hal == 'login') {echo "active";} ?>"><a href="<?php echo base_url; ?>/login">Login</a></li>
+      <li class="<?php if (isset($hal) and $hal == 'daftar') {echo "active";} ?>"><a href="<?php echo base_url; ?>/auth/daftar">Daftar</a></li>
+      <li class="<?php if (isset($hal) and $hal == 'login') {echo "active";} ?>"><a href="<?php echo base_url; ?>/auth/login">Login</a></li>
 
       <?php endif ?>
 
