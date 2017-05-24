@@ -180,7 +180,7 @@ p a:hover{
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color: #ffffff;
-  background-color: #db0a5b;
+  background-color: #777;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
@@ -379,3 +379,19 @@ body.loading .ajaxcallanimate {
 }
 /* END DROPDOWN HOVER FIX */
 
+.thumbnail img{
+  -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition: 0.1s;
+}
+
+.thumbnail img:hover{
+   -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+
+.thumbnail .btn-warning{
+  background: #F62459;
+  border-color: #F62459;
+  opacity: 1 !important;
+}
