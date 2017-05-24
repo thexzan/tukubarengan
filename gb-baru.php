@@ -23,7 +23,7 @@ include('layout/header.php'); ?>
 	    });
 	</script>
 
-		<h3>Buat GroupBuy Baru</h3>
+		<h3>Buat Produk Baru</h3>
 
 		<hr>
 
@@ -101,8 +101,8 @@ include('layout/header.php'); ?>
 
 
 					<div class="form-group">
-						<label class="control-label" for="thumb">Thumbnail</label>
-						<input type="file" id="thumb" name="thumb" required>
+						<label class="control-label" for="thumb">Cover</label>
+						<input type="file" id="thumb" name="cover" required>
 						<p class="help-block">Ukuran Cover 800px x 500px.</p>
 					</div>
 

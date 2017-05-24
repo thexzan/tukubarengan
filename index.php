@@ -20,6 +20,7 @@ include('layout/header.php'); ?>
 
 } 
 
+$db->orderBy('id', 'DESC');
 $data_produk = $db->ObjectBuilder()->get('produk');
 
 if ($db->count == 0) {

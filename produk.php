@@ -124,7 +124,7 @@
          <!-- BEGIN TAB 1 - ITEM DESCRIPTION -->
          <div role="tabpanel" class="tab-pane active" id="home">
             <div class="isitab">
-              ISI TAB
+              <?php echo $produk->desc; ?>
             </div>
          </div>
          <!-- END TAB 1 - ITEM DESCRIPTION -->
