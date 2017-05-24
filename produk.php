@@ -13,7 +13,17 @@
          redirect(base_url);
      }
    }
-   
+
+$db->join("user u", "u.id=k.id_user", "LEFT");
+$db->where('id_produk', $produk->id);
+$data_komentar = $db->ObjectBuilder()->get(
+  'komentar k',null,"
+  k.tanggal,
+  k.isi,
+  u.nama
+
+  ");
+$jumlah_komentar = $db->count;
 ?>
 
 <div data-animation="hierarchical-display">
@@ -123,7 +133,7 @@
             <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Detail</a>
          </li>
          <li role="presentation" class="">
-            <a href="#diskusi" aria-controls="diskusi" role="tab" data-toggle="tab">Diskusi <span class="badge">2</span></a>
+            <a href="#diskusi" aria-controls="diskusi" role="tab" data-toggle="tab">Diskusi <span class="badge"><?php echo $jumlah_komentar; ?></span></a>
          </li>
       </ul>
       <!-- END TAB HEADER -->
@@ -141,34 +151,29 @@
             <!-- TAMBAH MARGIN -->
             <div class="isitab">
                <!-- FORM DISKUSI -->
-               <form action="<?php echo base_url; ?>/kirim-komentar/obins-pbtabs-keycaps" method="post">
+               <form action="<?php echo base_url; ?>/user/add-komentar" method="post">
                   <div class="form-group">
                      <label for="isidiskusi">Buat Diskusi Baru</label>
-                     <textarea class="form-control" name="isi_komentar" rows="5"></textarea>
+                     <textarea class="form-control" name="isi" rows="5"></textarea>
                   </div>
+                  <input type="hidden" value="<?php echo $produk->id; ?>" name="id_produk">
                   <button type="submit" class="btn btn-gbid btn-block">Kirim Diskusi</button>
                </form>
                <hr>
                <!-- DIVIDER FORM DENGAN DISKUSI TERKIRIM -->
                <!-- DAFTAR DISKUSI -->
-               <div class="panel panel-default panel-hover">
-                  <div class="panel-body komen-by-admin">
-                     sama, tidak sesuai target ya refund          
-                  </div>
-                  <div class="panel-footer clearfix">
-                     <div class="col-md-6 col-xs-6">Your Ear Partner</div>
-                     <div class="col-md-6 col-xs-6 tanggal-komentar"><time class="timeago" datetime="2017-05-02 11:27:50">7 bulan lalu</time></div>
-                  </div>
-               </div>
-               <div class="panel panel-default panel-hover">
-                  <div class="panel-body ">
-                     PBT dan abs harganya sama...??? terus kalo GB batal nasib dp gimana..???          
-                  </div>
-                  <div class="panel-footer clearfix">
-                     <div class="col-md-6 col-xs-6">Karras Bastomi</div>
-                     <div class="col-md-6 col-xs-6 tanggal-komentar"><time class="timeago" datetime="2017-05-02 11:10:45">7 bulan lalu</time></div>
-                  </div>
-               </div>
+
+               <?php foreach ($data_komentar as $komentar): ?>
+                 <div class="panel panel-default panel-hover">
+                   <div class="panel-body ">
+                      <?php echo $komentar->isi; ?>         
+                   </div>
+                   <div class="panel-footer clearfix">
+                      <div class="col-md-6 col-xs-6"><?php echo $komentar->nama; ?></div>
+                      <div class="col-md-6 col-xs-6 tanggal-komentar"><time class="timeago" datetime="<?php echo $komentar->tanggal; ?>"></time></div>
+                   </div>
+                </div>
+               <?php endforeach ?>
                <!-- END DAFTAR DISKUSI -->
                <hr>
                <!-- BEGIN PAGINATION DISKUSI -->
