@@ -28,7 +28,17 @@ if ($db->count == 0) {
 }
 
 
-foreach ($data_produk as $produk): ?>
+foreach ($data_produk as $produk): 
+$jumlah_qty  = get_qty_order($produk->id);
+$persen_text = persentase($jumlah_qty,$produk->target);
+$persen_bar  = persentase($jumlah_qty,$produk->target);
+$bar_color = 'progress-black';
+if ($persen_bar >= 100) {
+    $persen_bar = 100;
+    $bar_color  = 'progress-bar-success';
+}
+
+?>
 
     <!-- BEGIN PRODUCT GRID ITEM -->
 <div class="item col-md-4 col-sm-6">
@@ -44,8 +54,8 @@ foreach ($data_produk as $produk): ?>
 
             <!-- PROGRESS -->
             <div class="progress">
-              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100%" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                 100%
+              <div class="progress-bar <?php echo $bar_color; ?>" role="progressbar" style="width: <?php echo $persen_bar; ?>%">
+                 <?php echo $persen_text; ?>%
               </div>
             </div>
             <!-- END PROGRESS -->
@@ -66,7 +76,7 @@ foreach ($data_produk as $produk): ?>
                     <a href="<?php echo base_url.'/join/'.$produk->slug; ?>" class="btn btn-hijau"><i class="fa fa-cart-plus" aria-hidden="true"></i> Join</a>
                 <?php else: ?>
 
-                    <a href="<?php echo base_url; ?>/join-groupbuy/1976-npkc-keycap-set" class="btn btn-warning disabled">CLOSED</a>
+                    <a href="#" class="btn btn-warning disabled">CLOSED</a>
                     <?php endif ?>
                   </div>
                 </div>

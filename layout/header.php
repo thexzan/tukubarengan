@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-define("base_url", "http://localhost/tapwl");
+define("base_url", "http://tukubarengan.dev");
 
 require_once ('MysqliDb.php');
 $db = new MysqliDb ('localhost', 'root', 'root', 'pwl');
@@ -40,6 +40,18 @@ function protect_admin(){
 function random_id($bytes) {
   $rand = mcrypt_create_iv($bytes, MCRYPT_DEV_URANDOM);
   return bin2hex($rand);
+}
+
+function persentase($current,$target){
+   return round($current/$target*100);
+}
+
+function get_qty_order($id_produk){
+  $db = new MysqliDb ('localhost', 'root', 'root', 'pwl');
+  $db->where('id_produk', $id_produk);
+  $db->get('pesanan');
+
+  return $db->count;
 }
 
 ?>
