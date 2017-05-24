@@ -186,14 +186,14 @@ p a:hover{
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
   color: #ffffff;
-  background-color: #db0a5b;
+  background-color: #777;
 }
 .navbar-default .navbar-toggle {
-  border-color: #db0a5b;
+  border-color: black;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-  background-color: #db0a5b;
+  background-color: black;
 }
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #ffffff;
