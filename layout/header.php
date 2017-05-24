@@ -60,7 +60,7 @@ function redirect($url){
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="dropdown ">
+        <li class="dropdown <?php if (isset($hal) and $hal == 'kategori') {echo "active";} ?>">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kategori <span class="caret"></span></a>
           <ul class="dropdown-menu">
 
@@ -85,10 +85,10 @@ function redirect($url){
 
         <p class="navbar-text">Hello <?php echo strstr($_SESSION["nama"], ' ', true); ?>!</p>
       
-      <li class="dropdown ">
+      <li class="dropdown <?php if (isset($hal) and $hal == 'admin-produk') {echo "active";} ?>">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Produk<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="<?php echo base_url; ?>/user/daftar-pesanan">Tambah Baru</a></li>
+            <li><a href="<?php echo base_url; ?>/admin/gb-baru">Tambah Baru</a></li>
             <li><a href="<?php echo base_url; ?>/user/ganti-password">Daftar Produk</a></li>
           </ul>
           </li>
@@ -101,7 +101,7 @@ function redirect($url){
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="<?php echo base_url; ?>/user/daftar-pesanan">Pesanan</a></li>
-            <li><a href="<?php echo base_url; ?>/user/ganti-password">Change Password</a></li>
+            <li><a href="<?php echo base_url; ?>/user/ganti-password">Change Password</a></li>sab
             <li role="separator" class="divider"></li>
             <li><a href="<?php echo base_url; ?>/logout">Logout</a></li>
           </ul>

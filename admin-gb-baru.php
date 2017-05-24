@@ -28,7 +28,7 @@ include('layout/header.php'); ?>
 		<hr>
 
 		<div class="col-md-8 col-lg-8">
-		<form action="<?php echo base_url; ?>/admin/publish-gb" method='post' enctype="multipart/form-data">
+		<form action="<?php echo base_url; ?>admin/publish-gb" method='post' enctype="multipart/form-data">
 
 			<!-- BEGIN FORM -->
 

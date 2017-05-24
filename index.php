@@ -1,8 +1,8 @@
 <?php 
-
-include('layout/header.php'); 
-
-?>
+if (isset($_GET['kategori'])) {
+    $hal = 'kategori';
+}
+include('layout/header.php'); ?>
 
 <!-- ROW GRID GROUPBUY -->
 <div class="row">
