@@ -105,6 +105,10 @@
         $("#slug").val(slugify($(this).val()));
       });
 
+      $("#nama-kategori").keyup(function(){
+        $("#slug").val(slugify($(this).val()));
+      });
+
       $(document).ready( function () {
           $('.daftar-produk').DataTable();
       } );
