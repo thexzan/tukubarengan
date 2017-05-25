@@ -112,6 +112,19 @@
       $(document).ready( function () {
           $('.daftar-produk').DataTable();
       } );
+
+      $.fn.digits = function(){ 
+          return this.each(function(){ 
+              $(this).text( $(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.") ); 
+          })
+      }
+
+      $('#qty').change(function() {
+        var qty = $("#qty").val();
+        var total = harga*qty;
+          $("#total").html('Total = Rp. '+total);
+          $("#total").digits();
+      });
     </script>
 
 

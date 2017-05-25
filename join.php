@@ -13,6 +13,10 @@ $produk = $db->ObjectBuilder()->getOne('produk');
 
 ?>
 
+<script>
+	var harga = <?php echo $produk->harga; ?>;
+</script>
+
 <div class="row" data-animation="hierarchical-display">
 <div class="col-md-6 col-md-offset-3">
 
@@ -25,7 +29,7 @@ $produk = $db->ObjectBuilder()->getOne('produk');
 
 		<div class="text-center">
 			<h2><?php echo $produk->judul; ?></h2>
-			<h4>Rp. <?php echo angka_cantik($produk->harga); ?></h4>
+			<h4>Rp. <?php echo angka_cantik($produk->harga); ?> <br><br><span id="total"></span></h4>
 		</div>
 
 		<hr>
@@ -34,7 +38,7 @@ $produk = $db->ObjectBuilder()->getOne('produk');
 		
 		<div class="form-group">
 		    <label>Jumlah Pesanan</label>
-		    <select class="form-control" name="qty">
+		    <select class="form-control" name="qty" id="qty">
 		      <?php 
 		      	for ($x=1; $x <= 10; $x++) { 
 		      		echo '<option value="'.$x.'">'.$x.'</option>';

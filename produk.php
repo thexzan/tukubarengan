@@ -51,12 +51,13 @@ $jumlah_komentar = $db->count;
          <!-- BEGIN THUMBNAIL -->
          <!-- GB ITEM DETAIL -->
          <div class="caption"> 
-                  <h2>Rp. <?php echo angka_cantik($produk->harga); ?><hr></h2>
+                  <h3 class="text-center"><?php echo $produk->judul; ?><hr></h3>
 
                   
                   
-                     <h4 class="group inner list-group-item-heading">
-                         <?php echo $produk->judul; ?>                  
+                     <h4 class="group inner list-group-item-heading text-center">
+                               Rp. <?php echo angka_cantik($produk->harga); ?>
+                         <hr>           
                          <div class="text-center">
                             <?php if ($produk->status == 'open'): ?>
                              <span class="label label-success"><?php echo strtoupper($produk->status); ?></span>
@@ -152,8 +153,8 @@ $jumlah_komentar = $db->count;
                <!-- DAFTAR DISKUSI -->
 
                <?php foreach ($data_komentar as $komentar): ?>
-                 <div class="panel panel-primary panel-hover">
-                   <div class="panel-body ">
+                 <div class="panel panel-default panel-hover">
+                   <div class="panel-body">
                       <?php echo $komentar->isi; ?>         
                    </div>
                    <div class="panel-footer clearfix">
