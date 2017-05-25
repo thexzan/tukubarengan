@@ -8,11 +8,11 @@ $no = 1;
 if (isset($_GET['action'])) {
 	if ($_GET['action'] == 'hapus') {
 		$db->where('id', $_GET['id']);
-        $data_foto = $db->ObjectBuilder()->getOne('foto');
-        unlink('images/'.$data_foto->foto);
+        $data_produk = $db->ObjectBuilder()->getOne('produk');
+        unlink('images/'.$data_produk->cover);
 
         $db->where('id', $_GET['id']);
-        $db->delete('foto');
+        $db->delete('produk');
 	}
 }
 
