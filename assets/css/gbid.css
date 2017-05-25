@@ -1,0 +1,425 @@
+/* MIXED */
+.progress-merah{
+  background: #F62459;
+}
+
+.merah-gbid a{
+  background: #F62459 !important; 
+  border-color: #F62459 !important; 
+}
+
+.btn-gbid{
+  background: #F62459;
+}
+
+.btn-hijau{
+  background: black;
+  color: white;
+}
+
+.label-gbid{
+  background: #F62459;
+}
+
+.label-gbid-alt{
+  background: #5D253E;
+}
+
+p a{
+  background: #F62459;
+  color: white;
+  text-decoration: none;
+  padding: 0px 5px;
+  border-radius: 5px;
+}
+
+p a:hover{
+  color: white;
+  text-decoration: none;
+  background: #5D253E;
+}
+
+.btn-hijau:hover{
+  background: #26A65B;
+  color: white;
+}
+
+.btn-gbid{
+  background: #F62459;
+  color: white;
+}
+
+.harga{
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+.logogbid{
+  height: 35px;
+  padding-right: 20px;
+  margin-top: 8px;
+}
+
+.judul-item-grid{
+  color: black;
+}
+
+.judul-item-grid:hover{
+  color: black;
+  text-decoration: none;
+}
+
+.panel-hover:hover .panel-footer{
+  background: #F62459;
+  color: white;
+}
+/* BEGIN PRODUCT GRID */
+.thumbnail{
+    padding: 0px;
+}
+
+.box-item-page{
+    padding: 0px;
+}
+
+.thumbnail-grid{
+  padding: 0px;
+  position: relative;
+  border: 0;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0;
+  z-index: 1;
+}
+
+.thumbnail-grid:hover{
+  -webkit-box-shadow: 0px 0px 62px -20px rgba(0,0,0,0.56);
+  -moz-box-shadow: 0px 0px 62px -8px rgba(0,0,0,0.56);
+  box-shadow: 0px 0px 62px -20px rgba(0,0,0,0.56);
+  z-index: 99 !important;
+}
+
+.thumb-item-page{
+  border: 0;
+}
+
+.list-group-item-text{
+    margin: 0 0 11px;
+}
+
+.item .harga{
+  font-weight: bold;
+}
+
+.isitab{
+  margin-top: 20px;
+}
+
+.tanggal-komentar{
+  text-align: right;
+}
+
+.spacefooter{
+  margin-top: 50px;
+}
+
+@media (max-width: 767px) {
+  .list-group{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+/* END PRODUCT GRID */
+
+/* BEGIN PRODUCT DETAIL */
+.item .isitab img{
+  padding-bottom: 20px;
+}
+
+.komen-by-admin{
+  background: #fcf7df;
+}
+/* END PRODUCT DETAIL */
+
+/* BEGIN PRODUCT DETAIL SIDEBAR */
+
+.item-detail-sidebar h2{
+  margin: 0;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.item-detail-sidebar img{
+  width: 125px;
+}
+
+/* END PRODUCT DETAIL SIDEBAR */
+/* BEGIN CUSTOM NAVBAR GROUPBUYID */
+.navbar-default {
+  background-color: black;
+  border-color: black;
+}
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-text {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #f22966;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #777;
+}
+.navbar-default .navbar-toggle {
+  border-color: black;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: black;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffffff;
+}
+.navbar-default .navbar-link {
+  color: #ffffff;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: #777;
+}
+
+
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background-color: black;
+  color: white;
+}
+
+li.dropdown:hover{
+  background: #777;
+}
+
+/* END CUSTOM NAVBAR GROUPBUYID */
+/* FOOTER */
+.kaki{
+  background: #1d1d1e;
+  color: white;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.madewith{
+  background: black;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: white;
+}
+
+.madewith{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.madewith a{
+  color: white;
+  text-decoration: none;
+  background: #5D253E;
+  padding: 2px 5px;
+}
+
+.madewith span{
+  width: 10px;
+}
+
+.madewith .glyphicon{
+  font-size: 1.2em;
+}
+
+.madewith .fa{
+  font-size: 1.2em;
+}
+
+.kaki ul li,.kaki ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.kaki ul li a{
+  color: white;
+}
+
+.kaki ul li a:hover{
+  text-decoration: none;
+  color: #F62459;
+}
+/* END FOOTER */
+
+/* KONFIRMASI */
+.harga-confirm{
+  text-align: right;
+}
+
+.total-confirm{
+  font-size: 1.5em;
+  margin-top: 50px;
+}
+/* END KONFIRMASI */
+
+/* NEW GB ITEMS */
+.panel-gbid:hover .panel-heading{
+  background: #F62459;
+  color: white;
+}
+
+.daftar-rekening{
+  margin-top: 50px;
+}
+
+/* */
+.tab-content .isitab img{
+  max-width: 100%;
+}
+
+.isitab{
+  word-wrap: break-word;
+}
+
+/* LOADING STATE ON AJAX CALL 
+SETTING TAMPILAN LOADING
+*/
+.ajaxcallanimate {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, 0.9 ) 
+                50% 50% 
+                no-repeat;
+}
+
+/* KETIKA LOADING SEDANG TAMPIL
+HILANGIN SCROLLBAR DENGAN OVERFLOW HIDDEN
+*/
+body.loading {
+    overflow: hidden;   
+}
+
+/* KETIKA BODY PUNYA CLASS LOADING
+MAKA TAMPILKAN DIV MODAL
+*/
+body.loading .ajaxcallanimate {
+    display: block;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #db0a5b;
+  }
+
+  .daftar-rekening{
+    margin-top: 100px;
+  }
+
+  .hide{
+    display: none;
+  }
+
+}
+
+/* DROPDOWN HOVER FIX */
+@media only screen and (min-width : 768px) {
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .menu-utama{
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+}
+/* END DROPDOWN HOVER FIX */
+
+.thumbnail img{
+  -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition: 0.1s;
+}
+
+.thumbnail img:hover{
+   -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+
+.thumbnail .btn-warning{
+  background: #F62459;
+  border-color: #F62459;
+  opacity: 1 !important;
+}
+
+.label-biru{
+  background: rgb(53, 156, 255);
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.btn-black{
+  background: black;
+  color: white;
+}
+
+.btn-black:hover{
+  background: white;
+  color: black;
+  border-color: black;
+}
+
+.progress-black{
+  color: white;
+  background: black;
+}
+
+.new-kategori{
+  margin-top: 50px;
+}

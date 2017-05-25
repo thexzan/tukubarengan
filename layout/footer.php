@@ -10,15 +10,15 @@
     <div class="container">
 
       <div class="col-md-4">
-        <h4 class="h4"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Tentang GroupBuyID <span class="label label-gbid">BETA</span></h4>
-        <p>GroupBuyID is a new hybrid platform for group buying and kickstarter media for indie project. Don't waste your priceless idea, make it come true in GROUP!</p>
+        <h4 class="h4"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Tentang TukuBarengan <span class="label label-gbid">BETA</span></h4>
+        <p>TukuBarengan is a new hybrid platform for group buying and kickstarter media for indie project. Don't waste your priceless idea, make it come true in GROUP!</p>
       </div>
 
       <div class="col-md-2">
-        <h3 class="h4">GroupBuyID</h3>
+        <h3 class="h4">TukuBarengan</h3>
        <ul>
-          <li><a href="http://gbid.dev/hal/apa-itu-groupbuy">Apa itu Group Buy?</a></li>
-          <li><a href="http://gbid.dev/hal/tentang-kami">Tentang Kami</a></li>
+          <li><a href="<?php echo base_url; ?>/hal/apa-itu-groupbuy">Apa itu Group Buy?</a></li>
+          <li><a href="<?php echo base_url; ?>/hal/tentang-kami">Tentang Kami</a></li>
           <!--<li><a href="#">Karir</a></li>
           <li><a href="#">Forum</a></li>
           <li><a href="#">Blog</a></li>
@@ -29,11 +29,11 @@
       <div class="col-md-2">
         <h3 class="h4">Bantuan</h3>
         <ul>
-          <li><a href="http://gbid.dev/hal/faq">FAQ</a></li>
+          <li><a href="<?php echo base_url; ?>/hal/faq">FAQ</a></li>
           <!--<li><a href="#">Tata Cara</a></li>
           <li><a href="#">Bantuan</a></li>
           <li><a href="#">Syarat dan Ketentuan</a></li>-->
-          <li><a href="http://gbid.dev/hal/kebijakan-privasi">Kebijakan Privasi</a></li>
+          <li><a href="<?php echo base_url; ?>/hal/kebijakan-privasi">Kebijakan Privasi</a></li>
         </ul>
       </div>
 
@@ -42,8 +42,8 @@
         
        <ul>
           
-           <?php foreach ($data_kategori as $kategori): ?>
-            <li><a href="http://gbid.dev/kategori/<?php echo $kategori->slug; ?>"><?php echo $kategori->judul; ?></a></li>
+           <?php foreach ($base_kategori as $kategori): ?>
+            <li><a href="<?php echo base_url; ?>/kategori/<?php echo $kategori->slug; ?>"><?php echo $kategori->judul; ?></a></li>
           <?php endforeach ?>
 
         </ul>
@@ -70,18 +70,16 @@
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script src="<?php echo base_url; ?>/assets/js/jquery.min.js"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed  -->
-    <script src="http://gbid.dev/assets/js/min/bootstrap.min.js"></script>
+    <script src="<?php echo base_url; ?>/assets/js/bootstrap.min.js"></script>
 
-      <link rel="stylesheet" type="text/css" href="http://gbid.dev/assets/css/datatable.css">
-    <script src="http://gbid.dev/assets/js/min/datatable.min.js"></script>
-    <script>
-     $(document).ready(function(){
-        $('#gb-keyboard').DataTable();
-      });
-     </script>
+      <link rel="stylesheet" type="text/css" href="<?php echo base_url; ?>/assets/css/datatable.css">
+      <link rel="stylesheet" type="text/css" href="<?php echo base_url; ?>/assets/css/zmd.hierarchical-display.min.css">
+    <script src="<?php echo base_url; ?>/assets/js/datatable.min.js"></script>
+    <script src="<?php echo base_url; ?>/assets/js/timeago.js"></script>
+    <script src="<?php echo base_url; ?>/assets/js/jquery.zmd.hierarchical-display.js"></script>
   
   
   
@@ -93,12 +91,35 @@
         $("body").removeClass("loading");
       });
 
+      function slugify(text){
+        return text.toString().toLowerCase()
+          .replace(/\s+/g, '-')           // Replace spaces with -
+          .replace(/_/g, '-')              // Replace _ with space
+          .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+          .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+          .replace(/^-+/, '')             // Trim - from start of text
+          .replace(/-+$/, '');            // Trim - from end of text
+      }
+
+      $("#nama-item").keyup(function(){
+        $("#slug").val(slugify($(this).val()));
+      });
+
+      $("#nama-kategori").keyup(function(){
+        $("#slug").val(slugify($(this).val()));
+      });
+
+      $(document).ready( function () {
+          $('.daftar-produk').DataTable();
+      } );
     </script>
 
 
 
+
+
 <!-- ANIMASI AJAX LOADING AKAN TAMPIL SAAT ADA AJAX CALL-->
-<div class="ajaxcallanimate" style="background-image: url(http://gbid.dev/assets/images/gbid-ajax-loading.gif)"></div>
+<div class="ajaxcallanimate" style="background-image: url(<?php echo base_url; ?>/assets/images/gbid-ajax-loading.gif)"></div>
 
 
 
