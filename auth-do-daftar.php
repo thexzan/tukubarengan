@@ -12,13 +12,14 @@ $password_setting = [
 $new_pass = password_hash($pass, PASSWORD_BCRYPT, $password_setting);
 
 $data = Array (
-    "email"    => strip_tags($email),
-    "nama"     => strip_tags(ucwords(strtolower($nama))),
-    "password" => $new_pass,
-    "level"    => 'user',
+    "email"     => strip_tags($email),
+    "nama"      => strip_tags(ucwords(strtolower($nama))),
+    "password"  => $new_pass,
+    "level"     => 'user',
+    "suspended" => 0,
 );
 
 $id = $db->insert ('user', $data);
 
 
-redirect(base_url.'/login');
+redirect(base_url.'/auth/login');

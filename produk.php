@@ -14,6 +14,7 @@
      }
    }
 
+$db->orderBy('k.id', 'desc');
 $db->join("user u", "u.id=k.id_user", "LEFT");
 $db->where('id_produk', $produk->id);
 $data_komentar = $db->ObjectBuilder()->get(
@@ -151,7 +152,7 @@ $jumlah_komentar = $db->count;
                <!-- DAFTAR DISKUSI -->
 
                <?php foreach ($data_komentar as $komentar): ?>
-                 <div class="panel panel-default panel-hover">
+                 <div class="panel panel-primary panel-hover">
                    <div class="panel-body ">
                       <?php echo $komentar->isi; ?>         
                    </div>

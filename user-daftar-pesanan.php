@@ -30,7 +30,7 @@ $jumlah_pesanan = $db->count;
 	<th>Produk</th>
 	<th>Jumlah</th>
 	<th>Total</th>
-	<th>Total</th>
+	<th>Tanggal</th>
 </thead>
 
 <?php foreach ($daftar_pesanan as $pesanan): ?>

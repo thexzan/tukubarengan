@@ -18,7 +18,7 @@
 			<div class="panel panel-default">
 				<div class="panel-body">
 
-					<form action="auth-do-daftar" method="post">
+					<form action="<?php echo base_url.'/auth/do-daftar'; ?>" method="post">
 						<div class="form-group">
 							<label for="nama">Nama Lengkap</label>
 							<input type="text" class="form-control" id="nama" placeholder="Nama Anda" required autofocus name="nama">
