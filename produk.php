@@ -24,6 +24,9 @@ $data_komentar = $db->ObjectBuilder()->get(
 
   ");
 $jumlah_komentar = $db->count;
+
+
+
 ?>
 
 <div data-animation="hierarchical-display">
@@ -98,25 +101,7 @@ $jumlah_komentar = $db->count;
          <!-- END GB ITEM DETAIL -->
       </div>
       <!-- END THUMB-->
-      <div class="panel panel-default">
-         <div class="panel-heading">
-            <h3 class="panel-title">GroupBuy Starter</h3>
-         </div>
-         <div class="panel-body">
-            <ul class="media-list">
-               <li class="media">
-                  <div class="media-left hidden-xs">
-                     <a href="#">
-                     <img class="media-object" src="<?php echo base_url; ?>/assets/images/groupbuyid-logo-square-125.jpg" alt="GroupBuyID">
-                     </a>
-                  </div>
-                  <div class="media-body">
-                     <h4 class="media-heading">GroupBuyID</h4>
-                     <!-- <h4 class="media-heading">Your Ear Partner</h4> -->
-                  </div>
-               </li>
-            </ul>
-         </div>
+      
       </div>
    </div>
    <!-- END SIDEBAR-->
@@ -133,7 +118,7 @@ $jumlah_komentar = $db->count;
             <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Detail</a>
          </li>
          <li role="presentation" class="">
-            <a href="#diskusi" aria-controls="diskusi" role="tab" data-toggle="tab">Diskusi <span class="badge"><?php echo $jumlah_komentar; ?></span></a>
+            <a href="#diskusi" aria-controls="diskusi" role="tab" data-toggle="tab">Komentar <span class="badge"><?php echo $jumlah_komentar; ?></span></a>
          </li>
       </ul>
       <!-- END TAB HEADER -->
@@ -154,11 +139,11 @@ $jumlah_komentar = $db->count;
               <?php if (isset($_SESSION['level'])): ?>
                 <form action="<?php echo base_url; ?>/user/add-komentar" method="post">
                    <div class="form-group">
-                      <label for="isidiskusi">Buat Diskusi Baru</label>
+                      <label for="isidiskusi">Buat Komentar Baru</label>
                       <textarea class="form-control" name="isi" rows="5"></textarea>
                    </div>
                    <input type="hidden" value="<?php echo $produk->id; ?>" name="id_produk">
-                   <button type="submit" class="btn btn-gbid btn-block">Kirim Diskusi</button>
+                   <button type="submit" class="btn btn-gbid btn-block">Kirim Komentar</button>
                 </form>
                 <hr>
               <?php endif ?>

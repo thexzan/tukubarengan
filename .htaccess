@@ -1,14 +1,14 @@
 RewriteEngine on 
-
 ErrorDocument 404 /404.php
 
-RewriteRule ^kategori/(\w+)/?$ index.php?kategori=$1
+RewriteRule ^kategori/([0-9a-zA-Z-]+)$ index.php?kategori=$1
+RewriteRule ^join/([0-9a-zA-Z-]+)$ join.php?produk=$1
+
 RewriteRule ^gb/([0-9a-zA-Z-]+)$ produk.php?produk=$1
 RewriteRule ^hal/([0-9a-zA-Z-]+)$ hal.php?slug=$1
 RewriteRule ^admin/([0-9a-zA-Z-]+)$ admin-$1.php
 RewriteRule ^user/([0-9a-zA-Z-]+)$ user-$1.php
 RewriteRule ^auth/([0-9a-zA-Z-]+)$ auth-$1.php
-RewriteRule ^join/([0-9a-zA-Z-]+)$ join.php?produk=$1
 
 
 RewriteRule ^edit-gb/([0-9a-zA-Z-]+)$ admin-edit-gb.php?slug=$1
