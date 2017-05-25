@@ -1,6 +1,6 @@
 RewriteEngine on 
 
-ErrorDocument 404 /tapwl/404.php
+ErrorDocument 404 /404.php
 
 RewriteRule ^kategori/(\w+)/?$ index.php?kategori=$1
 RewriteRule ^gb/([0-9a-zA-Z-]+)$ produk.php?produk=$1
