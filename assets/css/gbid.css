@@ -26,7 +26,7 @@
 }
 
 p a{
-  background: #F62459;
+  background: black;
   color: white;
   text-decoration: none;
   padding: 0px 5px;
@@ -71,7 +71,7 @@ p a:hover{
 }
 
 .panel-hover:hover .panel-footer{
-  background: #F62459;
+  background: black;
   color: white;
 }
 /* BEGIN PRODUCT GRID */
@@ -422,4 +422,20 @@ body {
 
 .new-kategori{
   margin-top: 50px;
+}
+
+.breadcrumb{
+  background: rgb(242, 242, 242);
+}
+
+.breadcrumb>.active{
+  color: rgb(138, 138, 138);
+}
+
+.breadcrumb a{
+  color: black;
+}
+
+.btn-hijau:hover{
+  background: #F62459;
 }
