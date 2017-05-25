@@ -12,7 +12,7 @@ $data = Array (
     "cover"       => $_FILES["cover"]["name"]
 );
 
-$id = $db->insert ('produk', $data);
+$db->insert('produk', $data);
 
 $name     = $_FILES["cover"]["name"];
 $tmp_name = $_FILES['cover']['tmp_name'];
