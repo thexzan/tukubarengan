@@ -1,6 +1,7 @@
 <?php 
 $hal = 'admin-produk';
 include('layout/header.php');
+protect_admin();
 $no = 1;
 
 if (isset($_GET['action'])) {
