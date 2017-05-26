@@ -1,5 +1,5 @@
 <?php include('layout/header.php');
-
+protect_user();
 $isi       = strip_tags($_POST['isi']);
 $id_produk = $_POST['id_produk'];
 $id_user   = $_SESSION['id'];
