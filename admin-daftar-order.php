@@ -1,6 +1,7 @@
 <?php 
 $hal = 'admin-order';
 include('layout/header.php');
+protect_admin();
 $no = 1;
 
 $db->join("user u", "u.id=o.id_user", "LEFT");
