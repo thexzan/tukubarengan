@@ -12,6 +12,3 @@ RewriteRule ^auth/([0-9a-zA-Z-]+)$ auth-$1.php
 
 
 RewriteRule ^edit-gb/([0-9a-zA-Z-]+)$ admin-edit-gb.php?slug=$1
-
-RewriteRule ^user/konfirmasi-join$ konfirmasi-join.php
-RewriteRule ^user/purchased$ purchased.php
