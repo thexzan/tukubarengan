@@ -1,22 +1,22 @@
 <?php 
 session_start();
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// DIGUNAKAN SAAT DEVELOPMENT AGAR MEMAKSA PHP MENGELUARKAN ERROR
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
+// PASTIKAN URL SUDAH DISETTING DENGAN BENAR
 define("base_url", "http://tukubarengan.dev");
 
+// PASTIKAN SETTING DATABASE DENGAN BENAR
 require_once ('MysqliDb.php');
 $db = new MysqliDb ('localhost', 'root', 'root', 'pwl');
 
-
-// BASE QUERY
+// BASE QUERY KATEGORI UNTUK MENU
 $base_kategori = $db->ObjectBuilder()->get('kategori');
 
-
-// FUNGSI
-
+// DAFTAR FUNGSI-FUNGSI YANG AKAN DIGUNAKAN NANTINYA
 function angka_cantik($angka){
     return number_format($angka, 0 , '' , '.' );
 }
